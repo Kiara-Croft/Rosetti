@@ -1,0 +1,151 @@
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+
+.icon svg {
+  color: var(--white);
+}
+
+/* fluturi */
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 890px) {
+  .containerRotundTransparent {
+    margin-top: 40vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}
+
+/* Stilurile pentru cardul care se rotește */
+.content {
+  height: 100%; /* Folosește înălțimea containerului părinte */
+  color: white;
+  margin: 2vh; /* Adăugat pentru a separa de textul "Cadrele didactice" */
+  width: 20vh;
+}
+
+/* Card responsive */
+.card {
+  perspective: 150rem;
+  width: 80vw; /* ia 80% din lățimea ecranului */
+  max-width: 30rem; /* pe ecrane mari rămâne limitat */
+  height: auto;
+  position: relative;
+}
+
+.card__side {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2; /* păstrează proporția */
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.card__side--front,
+.card__side--back {
+  background-color: #1c1c1c;
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+
+/* Text în card */
+.card__cont {
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  color: white;
+}
+
+/* Pe telefoane */
+@media only screen and (max-width: 890px) {
+  .card {
+    width: 95vw;
+  }
+}

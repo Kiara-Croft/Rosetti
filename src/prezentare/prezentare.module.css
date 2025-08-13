@@ -1,0 +1,214 @@
+/*  Aici sunt variabilele de culori */
+:root {
+  --white: hsl(0, 0%, 97%);
+  --black: hsl(0, 0%, 0%);
+  --yellow: hsl(52, 100%, 45%);
+  --orange: hsl(30, 100%, 50%);
+  --shadow1: hsla(0, 0%, 0%, 0.2);
+  --shadow2: hsla(0, 0%, 0%, 0.3);
+  --glass-bg: hsla(0, 0%, 100%, 0.1);
+  --glass-border: hsla(0, 0%, 100%, 0.3);
+  --glass-shadow: hsla(0, 0%, 0%, 0.1);
+  --page-bg: hsl(0, 0%, 88%);
+  --green: hsl(90, 100%, 30%);
+  --coral: hsl(350, 100%, 75%);
+}
+
+body {
+  background-color: var(--page-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/*  Navbar-ul  */
+.nav {
+  width: 100%;
+  height: 13vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*  Iconițele din navbar */
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr));
+  justify-items: center;
+  align-items: stretch;
+  height: 100%;
+  padding: 0 10vw;
+}
+
+/*  Fiecare icon + text sub el - versiune unificată */
+.iconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  max-width: 15vw;
+  height: 100%;
+  position: relative;
+  padding-bottom: 0.4vh;
+}
+
+/*se ocupa de textul de sub iconite*/
+.iconItem p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  bottom: 1.6vh;
+  width: max-content;
+  max-width: 30vw;
+  white-space: normal;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  margin: 0;
+  font-size: 1.3vh;
+  line-height: 1.1;
+}
+
+.iconItem:hover p {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.active {
+  border-bottom: 3px solid white;
+  padding-bottom: 0.5rem;
+}
+
+/*  Containerul mare din mijlocul paginii */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  Bula de sticlă fancy (card principal) */
+.glass {
+  margin-top: 15vh;
+  padding: 2vh 4vw;
+  width: clamp(30vw, 60vw, 80vw);
+  background: var(--glass-bg);
+  backdrop-filter: blur(2vh);
+  -webkit-backdrop-filter: blur(2vh);
+  border-radius: 5vw;
+  border: 0.2vh solid var(--glass-border);
+  box-shadow: 0 0.4vh 3vh var(--glass-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+/* Titlul central */
+.h {
+  color: var(--black);
+  text-align: center;
+  font-size: clamp(2vh, 3vw, 4vh);
+  word-wrap: break-word;
+}
+
+/*  Imaginile din carusel */
+.imgCarusel {
+  width: 50vw;
+  max-width: 30vw;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/*  Textul de sub carusel */
+.textCarusel {
+  margin-top: 2vh;
+  font-size: clamp(1.5vh, 2vw, 2.5vh);
+  font-weight: bold;
+  color: var(--black);
+}
+
+/*  Contorul de jos */
+.counter {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  background: var(--green);
+  color: var(--white);
+  padding: 1vh 2vw;
+  border-radius: 4vw;
+  font-size: 1.6vh;
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+}
+
+/* 📱 Responsive baby — versiunea mobilă */
+@media only screen and (max-width: 500px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 2vh;
+    background: var(--page-bg);
+  }
+
+  .nav {
+    height: 10vh;
+    border-radius: 0;
+    box-shadow: 0 0.5vh 1vh var(--shadow1);
+  }
+
+  .icon {
+    margin-top: 1vh;
+    padding: 0 2vw;
+  }
+
+  .container {
+    padding: 0 3vw;
+    margin-top: 15vh;
+  }
+
+  .glass {
+    width: 100vw;
+    margin: 5vh 0;
+    padding: 3vh 5vw;
+    border-radius: 4vw;
+  }
+
+  .h {
+    font-size: 2.5vh;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .textCarusel {
+    font-size: 2vh;
+    margin-top: 2vh;
+  }
+
+  .counter {
+    bottom: 2vh;
+    right: 2vw;
+    font-size: 1.5vh;
+  }
+
+  .iconItem {
+    padding-bottom: 0.8vh;
+  }
+
+  .iconItem p {
+    margin-top: 1vh;
+    bottom: 1vh;
+    max-width: 35vw;
+    font-size: 2vh;
+  }
+}

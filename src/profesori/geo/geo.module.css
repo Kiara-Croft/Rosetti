@@ -1,0 +1,163 @@
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*iconitele blestemate din nav bar*/
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.planetContainer {
+  border-radius: 50%;
+  box-shadow: 5px -3px 10px 3px #5e90f1;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  z-index: 1;
+}
+
+.night {
+  animation: rotate-night 80s linear infinite;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg);
+  background-size: 200%;
+  height: 500px;
+  position: absolute;
+  width: 500px;
+  z-index: 2;
+}
+
+.day {
+  animation: rotate-day 80s linear infinite;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg);
+  background-size: 200%;
+  border-left: solid 1px black;
+  border-radius: 50%;
+  box-shadow: 5px 0 20px 10px #040615 inset;
+  height: 500px;
+  margin-left: 110px;
+  position: absolute;
+  width: 500px;
+  z-index: 3;
+}
+
+.clouds {
+  animation: rotate-day 50s linear infinite, spin-clouds 100s ease infinite;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg);
+  background-size: 200%;
+  border-radius: 50%;
+  box-shadow: 5px 0 20px 10px #040615 inset, -9px 0px 20px 10px #5e90f1 inset;
+  height: 500px;
+  margin-left: 100px;
+  opacity: 0.45;
+  position: absolute;
+  width: 500px;
+  z-index: 4;
+}
+
+.innerShadow {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -5px 0 10px 1px #152b57 inset, 5px 0 10px 1px #040615 inset;
+  height: 500px;
+  margin-left: 0;
+  position: absolute;
+  width: 500px;
+  z-index: 5;
+}
+
+@keyframes rotate-day {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}
+
+@keyframes rotate-night {
+  0% {
+    background-position: calc(120% + 120px) 0;
+  }
+  100% {
+    background-position: calc(-80% + 120px) 0;
+  }
+}
+
+@keyframes spin-clouds {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 900px) {
+  .containerRotundTransparent {
+    margin-top: 60vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}

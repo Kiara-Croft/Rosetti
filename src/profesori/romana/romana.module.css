@@ -1,0 +1,414 @@
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*iconitele blestemate din nav bar*/
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+/* New book container to center the book */
+.bookContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+/* Magic book styles */
+.book,
+.book__pgShadow,
+.book__pg {
+  animation: cover 7s ease-in-out infinite;
+}
+.book {
+  --hue: 223;
+  --primary: hsl(var(--hue), 90%, 55%);
+  --primary-l: hsl(var(--hue), 90%, 65%);
+  --primary-d: hsl(var(--hue), 90%, 45%);
+  --white: hsl(var(--hue), 10%, 100%);
+  --white-d: hsl(var(--hue), 10%, 45%);
+
+  background-color: var(--primary-l);
+  border-radius: 0.25em;
+  box-shadow: 0 0.25em 0.5em hsla(0, 0%, 0%, 0.3),
+    0 0 0 0.25em var(--primary) inset;
+  padding: 0.25em;
+  perspective: 37.5em;
+  position: relative;
+  width: 10em;
+  height: 8em;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+}
+.book__pgShadow,
+.book__pg {
+  position: absolute;
+  left: 0.25em;
+  width: calc(50% - 0.25em);
+}
+.book__pgShadow {
+  animation-name: shadow;
+  background-image: linear-gradient(
+    -45deg,
+    hsla(0, 0%, 0%, 0) 50%,
+    hsla(0, 0%, 0%, 0.3) 50%
+  );
+  filter: blur(0.25em);
+  top: calc(100% - 0.25em);
+  height: 3.75em;
+  transform: SchoolY(0);
+  transform-origin: 100% 0%;
+}
+.book__pg {
+  animation-name: pg1;
+  background-color: var(--white);
+  background-image: linear-gradient(
+    90deg,
+    hsla(var(--hue), 10%, 90%, 0) 87.5%,
+    hsl(var(--hue), 10%, 90%)
+  );
+  height: calc(100% - 0.5em);
+  transform-origin: 100% 50%;
+}
+.book__pg2,
+.book__pg3,
+.book__pg4 {
+  background-image: repeating-linear-gradient(
+      hsl(var(--hue), 10%, 10%) 0 0.125em,
+      hsla(var(--hue), 10%, 10%, 0) 0.125em 0.5em
+    ),
+    linear-gradient(
+      90deg,
+      hsla(var(--hue), 10%, 90%, 0) 87.5%,
+      hsl(var(--hue), 10%, 90%)
+    );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg2 {
+  animation-name: pg2;
+}
+.book__pg3 {
+  animation-name: pg3;
+}
+.book__pg4 {
+  animation-name: pg4;
+}
+.book__pg5 {
+  animation-name: pg5;
+}
+
+/* Animations */
+@keyframes cover {
+  from,
+  5%,
+  45%,
+  55%,
+  95%,
+  to {
+    animation-timing-function: ease-out;
+    background-color: var(--primary-l);
+  }
+  10%,
+  40%,
+  60%,
+  90% {
+    animation-timing-function: ease-in;
+    background-color: var(--primary-d);
+  }
+}
+@keyframes shadow {
+  from,
+  10.01%,
+  20.01%,
+  30.01%,
+  40.01% {
+    animation-timing-function: ease-in;
+    transform: translate3d(0, 0, 1px) SchoolY(0) rotateY(0);
+  }
+  5%,
+  15%,
+  25%,
+  35%,
+  45%,
+  55%,
+  65%,
+  75%,
+  85%,
+  95% {
+    animation-timing-function: ease-out;
+    transform: translate3d(0, 0, 1px) SchoolY(0.2) rotateY(90deg);
+  }
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  to {
+    animation-timing-function: ease-out;
+    transform: translate3d(0, 0, 1px) SchoolY(0) rotateY(180deg);
+  }
+  50.01%,
+  60.01%,
+  70.01%,
+  80.01%,
+  90.01% {
+    animation-timing-function: ease-in;
+    transform: translate3d(0, 0, 1px) SchoolY(0) rotateY(180deg);
+  }
+  60%,
+  70%,
+  80%,
+  90%,
+  to {
+    animation-timing-function: ease-out;
+    transform: translate3d(0, 0, 1px) SchoolY(0) rotateY(0);
+  }
+}
+@keyframes pg1 {
+  from,
+  to {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.4deg);
+  }
+  10%,
+  15% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(180deg);
+  }
+  20%,
+  80% {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(180deg);
+  }
+  85%,
+  90% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(180deg);
+  }
+}
+@keyframes pg2 {
+  from,
+  to {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(0.3deg);
+  }
+  5%,
+  10% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.3deg);
+  }
+  20%,
+  25% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.9deg);
+  }
+  30%,
+  70% {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(179.9deg);
+  }
+  75%,
+  80% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.9deg);
+  }
+  90%,
+  95% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.3deg);
+  }
+}
+@keyframes pg3 {
+  from,
+  10%,
+  90%,
+  to {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(0.2deg);
+  }
+  15%,
+  20% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.2deg);
+  }
+  30%,
+  35% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.8deg);
+  }
+  40%,
+  60% {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(179.8deg);
+  }
+  65%,
+  70% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.8deg);
+  }
+  80%,
+  85% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.2deg);
+  }
+}
+@keyframes pg4 {
+  from,
+  20%,
+  80%,
+  to {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(0.1deg);
+  }
+  25%,
+  30% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.1deg);
+  }
+  40%,
+  45% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.7deg);
+  }
+  50% {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(179.7deg);
+  }
+  55%,
+  60% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.7deg);
+  }
+  70%,
+  75% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0.1deg);
+  }
+}
+@keyframes pg5 {
+  from,
+  30%,
+  70%,
+  to {
+    animation-timing-function: ease-in;
+    background-color: var(--white-d);
+    transform: translate3d(0, 0, 1px) rotateY(0);
+  }
+  35%,
+  40% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0deg);
+  }
+  50% {
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(179.6deg);
+  }
+  60%,
+  65% {
+    animation-timing-function: ease-out;
+    background-color: var(--white);
+    transform: translate3d(0, 0, 1px) rotateY(0);
+  }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .book {
+    --bg: hsl(var(--hue), 10%, 30%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 530px) {
+  .containerRotundTransparent {
+    margin-top: 20vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}

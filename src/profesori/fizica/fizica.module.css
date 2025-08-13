@@ -1,0 +1,404 @@
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*iconitele blestemate din nav bar*/
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Gear Animation Styles */
+#gear {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: -100px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 10px rgba(50, 50, 50, 0.1);
+  transform: rotateZ(0deg) translateZ(0);
+  animation: spin 3s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes spin {
+  2% {
+    transform: rotateZ(180deg) translateZ(0);
+  }
+  4% {
+    transform: rotateZ(270deg) translateZ(0);
+  }
+  6% {
+    transform: rotateZ(303.75deg) translateZ(0);
+  }
+  8% {
+    transform: rotateZ(303.75deg) translateZ(0);
+  }
+  10% {
+    transform: rotateZ(284.76563deg) translateZ(0);
+  }
+  12% {
+    transform: rotateZ(256.28906deg) translateZ(0);
+  }
+  14% {
+    transform: rotateZ(224.25293deg) translateZ(0);
+  }
+  16% {
+    transform: rotateZ(192.2168deg) translateZ(0);
+  }
+  18% {
+    transform: rotateZ(162.18292deg) translateZ(0);
+  }
+  20% {
+    transform: rotateZ(135.15244deg) translateZ(0);
+  }
+  22% {
+    transform: rotateZ(111.50076deg) translateZ(0);
+  }
+  24% {
+    transform: rotateZ(91.22789deg) translateZ(0);
+  }
+  26% {
+    transform: rotateZ(74.12266deg) translateZ(0);
+  }
+  28% {
+    transform: rotateZ(59.86831deg) translateZ(0);
+  }
+  30% {
+    transform: rotateZ(48.10846deg) translateZ(0);
+  }
+  32% {
+    transform: rotateZ(38.48677deg) translateZ(0);
+  }
+  34% {
+    transform: rotateZ(30.66914deg) translateZ(0);
+  }
+  36% {
+    transform: rotateZ(24.35491deg) translateZ(0);
+  }
+  38% {
+    transform: rotateZ(19.28097deg) translateZ(0);
+  }
+  40% {
+    transform: rotateZ(15.22182deg) translateZ(0);
+  }
+  42% {
+    transform: rotateZ(11.98718deg) translateZ(0);
+  }
+  44% {
+    transform: rotateZ(9.4185deg) translateZ(0);
+  }
+  46% {
+    transform: rotateZ(7.38496deg) translateZ(0);
+  }
+  48% {
+    transform: rotateZ(5.77953deg) translateZ(0);
+  }
+  50% {
+    transform: rotateZ(4.51526deg) translateZ(0);
+  }
+  52% {
+    transform: rotateZ(3.5219deg) translateZ(0);
+  }
+  54% {
+    transform: rotateZ(2.74302deg) translateZ(0);
+  }
+  56% {
+    transform: rotateZ(2.13346deg) translateZ(0);
+  }
+  58% {
+    transform: rotateZ(1.65724deg) translateZ(0);
+  }
+  60% {
+    transform: rotateZ(1.28579deg) translateZ(0);
+  }
+  62% {
+    transform: rotateZ(0.99649deg) translateZ(0);
+  }
+  64% {
+    transform: rotateZ(0.77147deg) translateZ(0);
+  }
+  66% {
+    transform: rotateZ(0.59669deg) translateZ(0);
+  }
+  68% {
+    transform: rotateZ(0.46108deg) translateZ(0);
+  }
+  70% {
+    transform: rotateZ(0.35598deg) translateZ(0);
+  }
+  72% {
+    transform: rotateZ(0.27461deg) translateZ(0);
+  }
+  74% {
+    transform: rotateZ(0.21168deg) translateZ(0);
+  }
+  76% {
+    transform: rotateZ(0.16305deg) translateZ(0);
+  }
+  78% {
+    transform: rotateZ(0.12551deg) translateZ(0);
+  }
+  80% {
+    transform: rotateZ(0.09654deg) translateZ(0);
+  }
+  82% {
+    transform: rotateZ(0.07422deg) translateZ(0);
+  }
+  84% {
+    transform: rotateZ(0.05702deg) translateZ(0);
+  }
+  86% {
+    transform: rotateZ(0.04378deg) translateZ(0);
+  }
+  88% {
+    transform: rotateZ(0.0336deg) translateZ(0);
+  }
+  90% {
+    transform: rotateZ(0.02577deg) translateZ(0);
+  }
+  92% {
+    transform: rotateZ(0.01976deg) translateZ(0);
+  }
+  94% {
+    transform: rotateZ(0.01514deg) translateZ(0);
+  }
+  96% {
+    transform: rotateZ(0.0116deg) translateZ(0);
+  }
+  98% {
+    transform: rotateZ(0.00888deg) translateZ(0);
+  }
+  100% {
+    transform: rotateZ(0.0068deg) translateZ(0);
+  }
+}
+
+#cover {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  margin: -100px;
+  background: rgb(120, 120, 120);
+  border-radius: 100%;
+  text-align: center;
+  line-height: 200px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  color: rgb(200, 200, 200);
+  font-size: 50px;
+  font-weight: 100;
+  box-shadow: inset 0px 0px 50px 25px rgba(80, 80, 80, 1);
+}
+
+#gear .tooth {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+}
+
+#gear .tooth:before {
+  content: "";
+  display: block;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  margin-left: 0px;
+  margin-top: 0px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom: 0px solid rgb(85, 85, 85);
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  box-shadow: 0px 0px 10px 5px rgba(50, 50, 50, 0.1);
+  transform: translateY(0px) translateZ(0);
+  animation: tooth 0.25s ease-out forwards;
+}
+
+@keyframes tooth {
+  100% {
+    width: 16px;
+    margin-top: -21px;
+    margin-left: -20px;
+    border-bottom: 42px solid rgb(85, 85, 85);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    transform: translateY(-110px) translateZ(0);
+  }
+}
+
+#gear .tooth:nth-child(1) {
+  transform: rotateZ(0deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(2) {
+  transform: rotateZ(30deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(3) {
+  transform: rotateZ(60deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(4) {
+  transform: rotateZ(90deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(5) {
+  transform: rotateZ(120deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(6) {
+  transform: rotateZ(150deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(7) {
+  transform: rotateZ(180deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(8) {
+  transform: rotateZ(210deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(9) {
+  transform: rotateZ(240deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(10) {
+  transform: rotateZ(270deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(11) {
+  transform: rotateZ(300deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(12) {
+  transform: rotateZ(330deg) translateZ(0);
+}
+
+#gear .tooth:nth-child(1):before {
+  animation-delay: 0.59s;
+}
+
+#gear .tooth:nth-child(2):before {
+  animation-delay: 0.61s;
+}
+
+#gear .tooth:nth-child(3):before {
+  animation-delay: 0.63s;
+}
+
+#gear .tooth:nth-child(4):before {
+  animation-delay: 0.65s;
+}
+
+#gear .tooth:nth-child(5):before {
+  animation-delay: 0.67s;
+}
+
+#gear .tooth:nth-child(6):before {
+  animation-delay: 0.69s;
+}
+
+#gear .tooth:nth-child(7):before {
+  animation-delay: 0.71s;
+}
+
+#gear .tooth:nth-child(8):before {
+  animation-delay: 0.73s;
+}
+
+#gear .tooth:nth-child(9):before {
+  animation-delay: 0.75s;
+}
+
+#gear .tooth:nth-child(10):before {
+  animation-delay: 0.77s;
+}
+
+#gear .tooth:nth-child(11):before {
+  animation-delay: 0.79s;
+}
+
+#gear .tooth:nth-child(12):before {
+  animation-delay: 0.81s;
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 530px) {
+  .containerRotundTransparent {
+    margin-top: 1vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+
+  #gear {
+    transform: scale(0.7);
+  }
+}

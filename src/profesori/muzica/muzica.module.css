@@ -1,0 +1,137 @@
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*iconitele blestemate din nav bar*/
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 530px) {
+  .containerRotundTransparent {
+    margin-top: 20vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}
+
+.muzieknootjes {
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 50%;
+  min-width: 300px;
+  height: 200px;
+  border: 0px solid #000;
+}
+
+.noot1,
+.noot2,
+.noot3,
+.noot4 {
+  position: absolute;
+  animation: notes 2s infinite linear;
+  font-size: 35px;
+  opacity: 0;
+}
+
+.noot1 {
+  top: 60px;
+  left: 0;
+  animation-delay: 0.5s;
+}
+
+.noot2 {
+  top: 30px;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.noot3 {
+  top: 90px;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.noot4 {
+  top: 40px;
+  left: 90%;
+  animation-delay: 2s;
+}
+
+@keyframes notes {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5) translate(100%, -100%);
+  }
+  100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}

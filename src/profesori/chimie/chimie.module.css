@@ -1,0 +1,474 @@
+:root {
+  --blue: #558fff;
+  --dark-blue: #5855ff;
+  --yellow: #fbdc39;
+  --dark-yellow: #fbad39;
+  --red: #f48e77;
+  --dark-red: #f4554b;
+  --green: #9cd86e;
+  --dark-green: #57ac15;
+  --light-grey: #b6c1c1;
+  --grey: #838383;
+  --dark-grey: #686868;
+  --orange: #ff7b25;
+  --coral: #ff6b6b;
+  --alb-pur: #f8f4ff;
+  --white: #ffffff;
+  --shadow1: rgba(0, 0, 0, 0.1);
+  --shadow2: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bubble_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2.5rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10vw;
+}
+
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  margin: 0.3rem auto;
+  width: 42vw;
+  height: 55vh;
+  flex-grow: 1;
+}
+
+.floor {
+  background-color: var(--grey);
+  height: 1vh;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0.6rem;
+  position: absolute;
+}
+
+.clampStand {
+  position: absolute;
+  left: 10vw;
+  height: 90%;
+  bottom: 0;
+}
+
+.verticalBar {
+  background-color: var(--grey);
+  width: 0.5rem;
+  height: 100%;
+  border-radius: 0.6rem;
+  position: absolute;
+}
+
+.horizontalClamp {
+  background-color: var(--grey);
+  height: 0.5rem;
+  width: 18vw;
+  border-radius: 0.6rem;
+  top: 3vh;
+  left: -2vw;
+  position: absolute;
+}
+
+.clampLever {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  border: 0.6rem solid var(--grey);
+  background-color: var(--dark-grey);
+  top: -1rem;
+  left: 1rem;
+  position: absolute;
+}
+
+.clampEnd {
+  background-color: var(--grey);
+  height: 1.3rem;
+  width: 3.5rem;
+  border-radius: 0.6rem;
+  left: 95%;
+  top: -0.4rem;
+  z-index: 10;
+  position: absolute;
+}
+
+.horizontalClamp:nth-of-type(2) {
+  top: 50%;
+  width: 14vw;
+  left: -6vw;
+}
+
+.horizontalClamp:nth-of-type(2) .clampLever {
+  left: 5vw;
+}
+
+.horizontalClamp:nth-of-type(2) .clampEnd:nth-of-type(2) {
+  left: -20%;
+}
+
+.roundFlask,
+.testTube {
+  position: absolute;
+}
+
+.roundFlask {
+  left: 18vw;
+  top: 2vh;
+}
+
+.flaskTop {
+  left: 2.2rem;
+  top: -2rem;
+  position: absolute;
+}
+
+.circle {
+  left: -0.3rem;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--light-grey);
+  position: absolute;
+}
+
+.fill {
+  width: 90%;
+  height: 90%;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  border-radius: 50%;
+  background-color: var(--blue);
+  position: absolute;
+}
+
+.fill::after {
+  content: "";
+  background-color: #fff;
+  height: 38%;
+  width: 100%;
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  display: block;
+}
+
+.markings {
+  left: 1rem;
+  bottom: 1.5rem;
+  position: absolute;
+}
+
+.marking {
+  width: 1.3rem;
+  z-index: 3;
+  background-color: #fff;
+  height: 0.2rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+  position: absolute;
+}
+
+.marking:nth-of-type(2) {
+  left: -0.6rem;
+  bottom: 0.8rem;
+}
+
+.marking:nth-of-type(3) {
+  left: -0.75rem;
+  bottom: 1.75rem;
+}
+
+.bubbles {
+  left: 3.4rem;
+  top: 5.5rem;
+  position: absolute;
+}
+
+.bubble {
+  background-color: var(--dark-blue);
+  z-index: 2;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+  opacity: 0;
+  animation-name: bubble_animation;
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.roundFlask:nth-of-type(2) {
+  top: 45vh;
+  left: auto;
+  right: 10vw;
+}
+
+.roundFlask:nth-of-type(2) .fill {
+  background-color: var(--yellow);
+}
+
+.roundFlask:nth-of-type(2) .circle {
+  height: 8rem;
+  width: 8rem;
+}
+
+.roundFlask:nth-of-type(2) .flaskTop {
+  width: 2.5rem;
+  top: -1.8rem;
+}
+
+.roundFlask:nth-of-type(2) .topRight {
+  left: 2.6rem;
+}
+
+.roundFlask:nth-of-type(2) .markings {
+  bottom: 1.5rem;
+  left: 0.9rem;
+}
+
+.roundFlask:nth-of-type(2) .marking:nth-of-type(2) {
+  left: -0.4rem;
+}
+
+.roundFlask:nth-of-type(2) .bubbles {
+  left: 3.8rem;
+  top: 7rem;
+}
+
+.roundFlask:nth-of-type(2) .bubble {
+  background-color: var(--dark-yellow);
+}
+
+.testTube {
+  height: 9rem;
+  width: 1.6rem;
+  border-radius: 0 0 0.6rem 0.6rem;
+  border: 0.3rem solid var(--light-grey);
+  border-top: none;
+  left: -2rem;
+  top: 20rem;
+}
+
+.testTube .fill {
+  background-color: var(--red);
+  width: 80%;
+  height: 50%;
+  border-radius: 0 0 0.3rem 0.3rem;
+  bottom: 0.1rem;
+  left: 0.1rem;
+}
+
+.testTube .markings {
+  bottom: 1.2rem;
+}
+
+.testTube .bubbles {
+  bottom: 1rem;
+  left: 0.5rem;
+}
+
+.testTube .bubble {
+  background-color: var(--dark-red);
+}
+
+.testTube .bubble:nth-of-type(2n) {
+  width: 0.3rem;
+  height: 0.3rem;
+  left: -0.3rem;
+}
+
+.testTube .bubble:nth-of-type(2n + 1) {
+  left: 0.15rem;
+}
+
+.testTube .bubble:nth-of-type(3) {
+  left: -0.1rem;
+}
+
+.testTube .bubble:nth-of-type(7) {
+  bottom: 4.7rem;
+}
+
+.testTube .bubble:nth-of-type(8) {
+  bottom: 5.3rem;
+}
+
+.testTube:last-of-type {
+  left: 12vw;
+  top: 20rem;
+}
+
+.testTube:last-of-type .fill {
+  background-color: var(--green);
+}
+
+.testTube:last-of-type .bubble {
+  background-color: var(--dark-green);
+}
+
+.topLeft,
+.topRight {
+  width: 0.6rem;
+  height: 0.3rem;
+  background-color: var(--light-grey);
+  left: -0.7rem;
+  border-radius: 0.6rem;
+  position: absolute;
+}
+
+.topRight {
+  left: 1.6rem;
+}
+
+.flaskTop {
+  z-index: 1;
+  width: 1.2rem;
+  height: 2.2rem;
+  background-color: #fff;
+  border-right: 0.3rem solid var(--light-grey);
+  border-left: 0.3rem solid var(--light-grey);
+}
+
+.flaskTop .topRight {
+  left: 1.3rem;
+}
+
+.bubble:nth-of-type(2n) {
+  right: 0.75rem;
+}
+
+.bubble:nth-of-type(2) {
+  bottom: 0.3rem;
+  animation-delay: 0.2s;
+}
+
+.bubble:nth-of-type(3) {
+  bottom: 1.1rem;
+  left: 0.6rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  animation-delay: 0.4s;
+}
+
+.bubble:nth-of-type(4) {
+  bottom: 2.2rem;
+  height: 0.45rem;
+  width: 0.45rem;
+  right: 0.3rem;
+  animation-delay: 0.6s;
+}
+
+.bubble:nth-of-type(5) {
+  bottom: 3.1rem;
+  left: 0.1rem;
+  animation-delay: 0.8s;
+}
+
+.bubble:nth-of-type(6) {
+  bottom: 4rem;
+  right: 0.3rem;
+  height: 0.45rem;
+  width: 0.45rem;
+  animation-delay: 1s;
+}
+
+.bubble:nth-of-type(7) {
+  animation-delay: 1.2s;
+}
+
+.bubble:nth-of-type(8) {
+  animation-delay: 1.4s;
+}
+
+.roundFlask {
+  left: 20vw;
+  top: -36vh;
+}
+
+.roundFlask:nth-of-type(2) {
+  top: 76vh;
+  right: 10vw;
+}
+
+.testTube {
+  left: -6vw;
+  top: 35vh;
+}
+
+.testTube:last-of-type {
+  left: 7vw;
+  top: 35vh;
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 530px) {
+  .containerRotundTransparent {
+    margin-top: 20vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}

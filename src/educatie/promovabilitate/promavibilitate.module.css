@@ -1,0 +1,86 @@
+.container {
+  position: absolute;
+  left: 2vw;
+  top: 20vh;
+}
+
+.tabel {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.tabel {
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabel th,
+.tabel td {
+  border: 4px solid #000000;
+  padding: 8px;
+}
+
+.tabel thead {
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.tabel td:first-child {
+  text-align: left;
+}
+
+h1 {
+  margin-top: 4vh;
+}
+
+.scrollWrapper {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin-bottom: 3vh;
+  background: transparent;
+  padding-right: 8px;
+}
+
+.scrollInner {
+  overflow-x: auto;
+  background: transparent;
+}
+
+/* Scrollbar Y */
+.scrollWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+.scrollWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scrollbar X */
+.scrollInner::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollInner::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+.scrollInner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wrapper {
+  min-height: 120vh;
+  margin-bottom: 10vh;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: transparent;
+}

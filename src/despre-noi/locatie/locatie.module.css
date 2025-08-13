@@ -1,0 +1,48 @@
+.harta {
+  position: relative;
+  top: 50vh;
+}
+
+.text1 {
+  position: absolute;
+  top: 26vh;
+  left: 1vh;
+}
+
+.text2 {
+  position: absolute;
+  top: 30vh;
+  left: 1vh;
+}
+
+.text3 {
+  position: absolute;
+  top: 34vh;
+  left: 1vh;
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .harta {
+    top: 40vh !important;
+    width: 70vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .harta {
+    top: 30vh;
+    width: 80vh;
+  }
+
+  .text1 {
+    font-size: 1.5vh;
+  }
+
+  .text2 {
+    font-size: 1.5vh;
+  }
+
+  .text3 {
+    font-size: 1.5vh;
+  }
+}

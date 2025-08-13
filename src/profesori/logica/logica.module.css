@@ -1,0 +1,149 @@
+.nav {
+  width: 100%;
+  height: 8vh;
+  border-radius: 0 0 10vw 10vw;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--orange),
+    var(--coral)
+  );
+  box-shadow: 0 0.3vh 0.5vh var(--shadow1), 0 1vh 2vh var(--shadow2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*iconitele blestemate din nav bar*/
+.icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+.icon svg {
+  color: var(--white);
+}
+
+.gradientGalben {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--alb-pur) 0%,
+    hsl(48, 100%, 87%) 20%,
+    hsl(51, 95%, 82%) 40%,
+    hsl(53, 92%, 79%) 70%,
+    hsl(54, 89%, 77%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 8vh;
+  box-sizing: border-box;
+}
+
+.scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+
+.scene * {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.butterfly {
+  animation: fly calc(12s + var(--random) * 6s) calc(var(--random) * -100s)
+    infinite linear;
+}
+
+.butterfly::before,
+.butterfly::after {
+  box-shadow: 0 0 15px #0007 inset;
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 53px;
+  background-color: hsl(calc(197 + var(--random) * 20), 100%, 50%);
+  clip-path: path(
+    "m0 24.949c 2.6262-5.4316 9.7782-15.554 16.428-20.546 4.798-3.6021 12.572-6.3892 12.572 2.4795 0 1.7712-1.0155 14.879-1.6111 17.007-2.0703 7.3984-9.6144 9.2854-16.325 8.1433 11.73 1.9964 14.714 8.6092 8.2697 15.222-12.239 12.559-17.591-3.1511-18.963-7.1766-.2514-.73797-.36904-1.0832-.37077-.78964z"
+  );
+  transform-origin: left;
+}
+
+.butterfly::before {
+  animation: flapB calc(0.2s + var(--random) * 0.1s) infinite alternate
+    ease-in-out;
+}
+
+.butterfly::after {
+  animation: flapA calc(0.2s + var(--random) * 0.1s) infinite alternate
+    ease-in-out;
+}
+
+@keyframes fly {
+  0% {
+    transform: rotateX(90deg) rotate(calc(var(--random) * 360deg))
+      translateX(200px) translateZ(-70vh);
+  }
+  100% {
+    transform: rotateX(90deg) rotate(calc(var(--random) * 360deg - 720deg))
+      translateX(2000px) translateZ(70vh);
+  }
+}
+
+@keyframes flapB {
+  from {
+    rotate: y 15deg;
+  }
+  to {
+    rotate: y -80deg;
+  }
+}
+
+@keyframes flapA {
+  from {
+    rotate: y 165deg;
+  }
+  to {
+    rotate: y 210deg;
+  }
+}
+
+.containerRotundTransparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  right: 4vw;
+  bottom: 60vh;
+  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+}
+
+/* Responsive pentru telefoane */
+@media only screen and (max-width: 530px) {
+  .containerRotundTransparent {
+    margin-top: 20vh;
+    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
+    height: auto; /* înălțimea crește automat după conținut */
+    bottom: auto; /* ca să nu stea ciudat poziționat */
+    right: auto;
+    left: 5vw;
+    padding: 1rem;
+  }
+}

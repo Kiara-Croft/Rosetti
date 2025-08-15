@@ -4,7 +4,7 @@ export default function Istorie() {
   return (
     <div className={styles.container}>
       <h1 className={styles.titlu}>
-        Scurta istorie a liceului Teoretic C.A. Rosetti
+        Scurta istorie a Liceului Teoretic C.A. Rosetti
       </h1>
 
       <div className={styles.card}>

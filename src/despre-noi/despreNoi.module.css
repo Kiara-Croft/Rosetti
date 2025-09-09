@@ -141,6 +141,7 @@
   align-items: stretch;
   padding-top: 8vh;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .active {

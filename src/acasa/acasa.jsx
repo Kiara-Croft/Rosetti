@@ -4,8 +4,8 @@ import { collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
 
 import Stiri from "./stiri/stiri/";
-import Evenimente from "./evenimente/Evenimente";
-import Concursuri from "./concursuri/Concursuri";
+import Evenimente from "./evenimente/evenimente";
+import Concursuri from "./concursuri/concursuri";
 
 import { Newspaper, School, GraduationCap, UserPen, Home } from "lucide-react";
 

@@ -74,7 +74,7 @@
   }
 }
 
- 
+/* Stiluri adăugate */
 .backgroundContent {
   position: absolute;
   top: 0;
@@ -193,7 +193,7 @@ p {
 
 .stone {
   margin: 40px;
-  width: 500px;
+  width: 50vw;
   border-radius: 50% 37% 17% 25%;
 
   background: linear-gradient(to left, #808080, #404040, #303030);

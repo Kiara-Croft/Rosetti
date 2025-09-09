@@ -64,6 +64,8 @@
 }
 .gradientGalben {
   min-height: 100vh;
+  overflow-y: auto; /* permite scroll vertical */
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   background: linear-gradient(
     to bottom,
@@ -78,6 +80,7 @@
   align-items: stretch;
   padding-top: 8vh;
   box-sizing: border-box;
+  
 }
 
 .cadrane {

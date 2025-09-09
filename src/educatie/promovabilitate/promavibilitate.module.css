@@ -1,11 +1,12 @@
 .container {
-  position: relative; /* nu absolut */
-  margin: 0 auto;
+  position: relative;       /* în loc de absolute */
+  margin: 10vh auto 0 auto; /* spațiu frumos de sus */
   padding: 2vh 2vw;
   max-width: 95vw;
   box-sizing: border-box;
   text-align: center;
 }
+
 
 .tabel {
   margin: 3vh auto;
@@ -68,8 +69,13 @@ h1 {
 
 .wrapper {
   min-height: 100vh;
-  margin-bottom: 10vh;
+  display: flex;
+  justify-content: center;  /* centru pe orizontală */
+  align-items: center;      /* centru pe verticală */
+  flex-direction: column;   /* să aibă spațiu și pentru titlu */
+  padding: 2vh 2vw;
 }
+
 
 ::-webkit-scrollbar {
   width: 1px;

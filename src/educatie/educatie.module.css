@@ -64,8 +64,8 @@
 }
 
 .active {
-  border-bottom: 3px solid white; /* linie alba */
-  padding-bottom: 0.5vh; /* să nu sară textul */
+  border-bottom: 3px solid white;  
+  padding-bottom: 0.5vh;  
 }
 
 .taburi {
@@ -138,7 +138,5 @@
   align-items: stretch;
   padding-top: 8vh;
   box-sizing: border-box;
-
-  /* 🔥 ADĂUGĂM ASTA 🔥 */
   position: relative;
 }

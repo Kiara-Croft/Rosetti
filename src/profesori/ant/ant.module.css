@@ -59,35 +59,35 @@
   position: absolute;
   right: 4vw;
   bottom: 60vh;
-  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+  box-sizing: border-box;  
 }
 
 /* Responsive pentru telefoane */
 @media only screen and (max-width: 890px) {
   .containerRotundTransparent {
     margin-top: 40vh;
-    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
-    height: auto; /* înălțimea crește automat după conținut */
-    bottom: auto; /* ca să nu stea ciudat poziționat */
+    width: 90vw;  
+    height: auto;  
+    bottom: auto;  
     right: auto;
     left: 5vw;
     padding: 1rem;
   }
 }
 
-/* Stilurile pentru cardul care se rotește */
+
 .content {
-  height: 100%; /* Folosește înălțimea containerului părinte */
+  height: 100%;  
   color: white;
-  margin: 2vh; /* Adăugat pentru a separa de textul "Cadrele didactice" */
+  margin: 2vh;  
   width: 20vh;
 }
 
-/* Card responsive */
+ 
 .card {
   perspective: 150rem;
-  width: 80vw; /* ia 80% din lățimea ecranului */
-  max-width: 30rem; /* pe ecrane mari rămâne limitat */
+  width: 80vw;  
+  max-width: 30rem;  
   height: auto;
   position: relative;
 }
@@ -95,7 +95,7 @@
 .card__side {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2; /* păstrează proporția */
+  aspect-ratio: 3 / 2;  
   transition: all 0.8s ease;
   position: absolute;
   top: 0;

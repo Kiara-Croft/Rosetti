@@ -176,18 +176,6 @@
   box-sizing: border-box;
 }
 
-/* ❌ gradientStiri – neutilizat în CSS dar folosit în JSX
-.gradientStiri {}
-*/
-
-/* ❌ gradientEvenimente – neutilizat în CSS dar folosit în JSX
-.gradientEvenimente {}
-*/
-
-/* ❌ gradientConcursuri – neutilizat în CSS dar folosit în JSX
-.gradientConcursuri {}
-*/
-
 /* 🧠 cardurile flexibile cu spațiere smart */
 .cardContainer {
   display: flex;
@@ -331,6 +319,6 @@
 }
 
 .active {
-  border-bottom: 3px solid white; /* linie alba */
-  padding-bottom: 0.5rem; /* să nu sară textul */
+  border-bottom: 3px solid white;  
+  padding-bottom: 0.5rem;  
 }

@@ -57,16 +57,16 @@
   position: absolute;
   right: 4vw;
   bottom: 60vh;
-  box-sizing: border-box; /* ca padding-ul să nu strice dimensiunea */
+  box-sizing: border-box;  
 }
 
 /* Responsive pentru telefoane */
 @media only screen and (max-width: 530px) {
   .containerRotundTransparent {
     margin-top: 20vh;
-    width: 90vw; /* aproape toată lățimea ecranului pe mobil */
-    height: auto; /* înălțimea crește automat după conținut */
-    bottom: auto; /* ca să nu stea ciudat poziționat */
+    width: 90vw;  
+    height: auto;  
+    bottom: auto;  
     right: auto;
     left: 5vw;
     padding: 1rem;

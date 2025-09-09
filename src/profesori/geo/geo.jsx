@@ -1,5 +1,5 @@
 import { Newspaper, School, GraduationCap, UserPen, Home } from "lucide-react";
-import styles from "./Geo.module.css";
+import styles from "./geo.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Geo() {

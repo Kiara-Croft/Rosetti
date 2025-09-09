@@ -1,6 +1,7 @@
 .harta {
   position: relative;
   top: 50vh;
+  margin-top: 20vh;
 }
 
 .text1 {
@@ -23,7 +24,7 @@
 
 @media (min-width: 601px) and (max-width: 1000px) {
   .harta {
-    top: 40vh !important;
+    top: 50vh !important;
     width: 70vh;
   }
 }
